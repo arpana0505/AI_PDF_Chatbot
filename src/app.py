@@ -14,22 +14,23 @@ st.set_page_config(
     layout="centered"
 )
 
-st.title("AI PDF Chatbot")
-st.caption("Upload a PDF and ask questions about its contents.")
+st.title("Document RAG Assistant")
 
+st.markdown(
+    """
+Ask questions about any PDF using Retrieval-Augmented Generation.
 
-# # force the retriever to be initialized only once in the beginning
-# # if the chatbot is not in the session state then build it, if it is then reuse it
-# if "retriever" not in st.session_state:
-#     # add a loading spinner, so while the code inside is running, ..
-#     # users see the loading sign and text
-#     with st.spinner("Preparing the PDF knowledge base..."):
-#         retriever, llm, chat_history = create_chatbot()
+Upload a document, then chat with an AI assistant that retrieves
+relevant passages before generating its answer.
+"""
+)
 
-#         # store the retriever, llm, chat history in streamlit's backpack
-#         st.session_state.retriever = retriever
-#         st.session_state.llm = llm
-#         st.session_state.chat_history = chat_history
+# showing which PDF is currently active
+if "uploaded_filename" in st.session_state:
+    st.caption(
+        f"Current document: "
+        f"{st.session_state.uploaded_filename}"
+    )
 
 #----------------------------------
 #SIDEBAR
@@ -44,13 +45,16 @@ with st.sidebar:
         "Upload a PDF",
         type = ["pdf"]
     )
+
+    if uploaded_file:
+        st.success(f"Loaded: {uploaded_file.name}")
     
-    st.divider()
+    #st.divider()
 
     # clear convo
     st.header("Controls")
 
-    if st.button("Clear conversation"):
+    if st.button("Clear conversation", use_container_width = True):
         if "chat_history" in st.session_state:
             st.session_state.chat_history = create_chat_history()
 
@@ -63,6 +67,12 @@ with st.sidebar:
         ]
         st.rerun()
 
+    st.divider()
+
+    st.caption(
+        "Built with LangChain, Chroma, OpenAI, and Streamlit."
+    )
+
 
 #----------------------------------
 #DISPLAY MESSAGE HISTORY
@@ -74,7 +84,8 @@ if "display_messages" not in st.session_state:
         # dictionaries tell Streamlit for draw these messages on the screen
         {
             "role" : "assistant",
-            "content" : ("Hello! Upload a PDF and ask me a question about it.")
+            "content" : ("Upload a PDF using the sidebar, "
+            "then ask me questions about its contents."),
         }
     ]
 
@@ -104,7 +115,7 @@ if uploaded_file:
         st.session_state.pop("llm", None)
         st.session_state.pop("chat_history", None)
 
-        with st.spinner("Reading and processing your PDF..."):
+        with st.spinner("Processing document and building semantic search index..."):
 
             # create folder if it doesn't eist
             os.makedirs("data/uploads", exist_ok = True)
@@ -200,7 +211,7 @@ if question:
         st.markdown(question)
     
     with st.chat_message("assistant"):
-        with st.spinner("Searching the document..."):
+        with st.spinner("Searching the document for relevant context..."):
             try:
                 answer = answer_question(
                     question = question,
