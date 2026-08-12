@@ -1,21 +1,23 @@
-
-# import a function that reads the env. file
 from dotenv import load_dotenv
-
-# os module allow Python to interact with the operating system, it can read env variables
 import os
 
-# read env file and loads everything into memory
+# load local .env file
 load_dotenv()
 
-# is there an environment variable callsed OPEN_AI_API?, if yes it returns its value
+# trying to get the API key from the local environment
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
+# if not found, try streamlit secrets
+if not OPENAI_API_KEY:
+    try:
+        import streamlit as st
+        OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
+    except Exception:
+        pass
+
+# if neither location contains the key, raise an error
 if not OPENAI_API_KEY:
     raise ValueError(
         "OPENAI_API_KEY was not found. "
-        "Make sure it is defined in your .env file."
+        "Add it to your .env file locally or Streamlit Secrets when deployed."
     )
-
-
-
