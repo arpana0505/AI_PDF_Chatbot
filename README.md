@@ -153,3 +153,18 @@ The Streamlit application will open in your browser.
 5. Use **Clear Conversation** to reset the chat while keeping the current document available.
 6. Upload a different PDF to automatically switch the active document and knowledge base.
 
+## Demo
+
+![Document RAG Assistant Demo](assets/app-demo_1.png)
+![Document RAG Assistant Demo](assets/app-demo_2.png)
+
+## Future Improvements
+
+* Multi-Document RAG: Allow users to upload and query multiple PDFs within the same knowledge base.
+* Improved Document Parsing: Add support for scanned PDFs, tables, and image-heavy documents using OCR and more advanced parsing techniques.
+* Enhanced Retrieval: Experiment with reranking and hybrid search to improve retrieval quality for complex or broad questions.
+* Source Visualization: Allow users to view the exact document passages used to generate each response.
+* Persistent Cloud Storage: Move vector storage from the application's local filesystem to a managed vector database for durable caching across deployments.
+* RAG Evaluation: Build an evaluation pipeline to measure retrieval relevance, answer faithfulness, response quality, and latency across a test question set.
+
+
