@@ -73,32 +73,32 @@ Different PDFs receive different database paths, preventing embeddings from sepa
 
 ```text
 document-rag-assistant/
-----assets/
-    ----architecture.png
-
-----src/
-    ----app.py
-    ----chatbot.py
-
-    ----components/
-        ----embeddings.py
-loader.py
-│   │   ├── memory.py
-│   │   ├── prompt.py
-│   │   ├── splitter.py
-│   │   ├── vectorstore.py
-│   │   └── config.py
-│   │
-│   └── utils/
-│       └── helpers.py
-│
-├── .streamlit/
-│   └── config.toml
-│
-├── requirements.txt
-├── README.md
-├── .gitignore
-└── LICENSE
+|____assets/
+|    |----architecture.png
+|    |
+|____src/
+|    |----app.py
+|    |----chatbot.py
+|    |
+|    |____components/
+|    |    |----embeddings.py
+|    |    |----loader.py
+|    |    |----memory.py
+|    |    |----prompt.py
+|    |    |----splitter.py
+|    |    |----vectorstore.py
+|    |    |----config.py
+|    |
+|    |____utils/
+|    |   |----helpers.py
+|    |
+|    |____streamlit/
+|    |   |----config.toml
+|    |
+|____requirements.txt
+|____README.md
+|____.gitignore
+|____LICENSE
 ```
 
 The application separates document loading, text splitting, embedding generation, vector storage, conversation memory, and prompting into individual components to keep the RAG pipeline modular and maintainable.
