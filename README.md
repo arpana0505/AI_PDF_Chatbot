@@ -71,6 +71,7 @@ Different PDFs receive different database paths, preventing embeddings from sepa
 
 ## Project Structure
 
+```text
 document-rag-assistant/
 ----assets/
     ----architecture.png
@@ -98,7 +99,7 @@ loader.py
 ├── README.md
 ├── .gitignore
 └── LICENSE
-
+```
 
 The application separates document loading, text splitting, embedding generation, vector storage, conversation memory, and prompting into individual components to keep the RAG pipeline modular and maintainable.
 
