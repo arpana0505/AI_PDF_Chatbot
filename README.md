@@ -72,7 +72,7 @@ Different PDFs receive different database paths, preventing embeddings from sepa
 ## Project Structure
 
 ```text
-document-rag-assistant/
+AI_PDF_Chatbot/
 |____assets/
 |    |----architecture.png
 |    |
@@ -102,4 +102,54 @@ document-rag-assistant/
 ```
 
 The application separates document loading, text splitting, embedding generation, vector storage, conversation memory, and prompting into individual components to keep the RAG pipeline modular and maintainable.
+
+## Running Locally
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/arpana0505/AI_PDF_Chatbot.git
+```
+
+### 2. Create a virtual environment
+
+Python 3.11 is recommended.
+
+```bash
+python3.11 -m venv venv
+source venv/bin/activate
+```
+
+### 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Configure the OpenAI API key
+
+Create a `.env` file in the project root:
+
+```text
+OPENAI_API_KEY=your_openai_api_key
+```
+
+The `.env` file is excluded from version control through `.gitignore` to prevent API credentials from being committed to the repository.
+
+### 5. Start the application
+
+```bash
+python3.11 -m streamlit run src/app.py
+```
+
+The Streamlit application will open in your browser.
+
+## Usage
+
+1. Upload a PDF using the sidebar.
+2. Wait for the document to be processed and indexed.
+3. Ask questions about the document using the chat input.
+4. Continue asking follow-up questions using the conversational interface.
+5. Use **Clear Conversation** to reset the chat while keeping the current document available.
+6. Upload a different PDF to automatically switch the active document and knowledge base.
 
