@@ -155,8 +155,8 @@ The Streamlit application will open in your browser.
 
 ## Demo
 
-![Document RAG Assistant Demo](assets/app-demo_1.png)
-![Document RAG Assistant Demo](assets/app-demo_2.png)
+![Document RAG Assistant Demo](assets/app_demo_1.png)
+![Document RAG Assistant Demo](assets/app_demo_2.png)
 
 ## Future Improvements
 
