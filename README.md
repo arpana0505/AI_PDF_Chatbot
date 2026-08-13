@@ -72,17 +72,16 @@ Different PDFs receive different database paths, preventing embeddings from sepa
 ## Project Structure
 
 document-rag-assistant/
-│
-├── assets/
-│   └── architecture.png
-│
-├── src/
-│   ├── app.py
-│   ├── chatbot.py
-│   │
-│   ├── components/
-│   │   ├── embeddings.py
-│   │   ├── loader.py
+----assets/
+    ----architecture.png
+
+----src/
+    ----app.py
+    ----chatbot.py
+
+    ----components/
+        ----embeddings.py
+loader.py
 │   │   ├── memory.py
 │   │   ├── prompt.py
 │   │   ├── splitter.py
