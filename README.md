@@ -56,3 +56,50 @@ PDF → SHA-256 Hash → Unique Chroma Database
 If the same PDF is uploaded again, the application detects the matching hash and loads its existing vector store rather than rebuilding all document embeddings.
 
 Different PDFs receive different database paths, preventing embeddings from separate documents from being mixed.
+
+## Tech Stack
+
+| Technology            | Purpose                                                           |
+| --------------------- | ----------------------------------------------------------------- |
+| **Python**            | Core application and backend logic                                |
+| **LangChain**         | RAG pipeline, document processing, retrieval, and LLM integration |
+| **OpenAI API**        | Embedding generation and LLM responses                            |
+| **Chroma**            | Vector storage and semantic similarity search                     |
+| **PyPDF**             | PDF text extraction                                               |
+| **Streamlit**         | Interactive web interface and application deployment              |
+| **SHA-256 / hashlib** | Content-based document identification and cache management        |
+
+## Project Structure
+
+document-rag-assistant/
+│
+├── assets/
+│   └── architecture.png
+│
+├── src/
+│   ├── app.py
+│   ├── chatbot.py
+│   │
+│   ├── components/
+│   │   ├── embeddings.py
+│   │   ├── loader.py
+│   │   ├── memory.py
+│   │   ├── prompt.py
+│   │   ├── splitter.py
+│   │   ├── vectorstore.py
+│   │   └── config.py
+│   │
+│   └── utils/
+│       └── helpers.py
+│
+├── .streamlit/
+│   └── config.toml
+│
+├── requirements.txt
+├── README.md
+├── .gitignore
+└── LICENSE
+
+
+The application separates document loading, text splitting, embedding generation, vector storage, conversation memory, and prompting into individual components to keep the RAG pipeline modular and maintainable.
+
