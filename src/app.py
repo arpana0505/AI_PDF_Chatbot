@@ -10,11 +10,11 @@ import hashlib
 
 # configure webpage, browser tab title
 st.set_page_config(
-    page_title = "AI PDF Chatbot",
+    page_title = "DocuMind AI",
     layout="centered"
 )
 
-st.title("Document RAG Assistant")
+st.title("DocuMind AI")
 
 st.markdown(
     """
