@@ -155,8 +155,8 @@ The Streamlit application will open in your browser.
 
 ## Demo
 
-![DocuMind AI Demo](assets/app_demo_1.png)
-![DocuMind AI Demo](assets/app_demo_2.png)
+![DocuMind AI Demo](assets/app_demo1.png)
+![DocuMind AI Demo](assets/app_demo2.png)
 
 ## Future Improvements
 
