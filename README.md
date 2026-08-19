@@ -108,7 +108,7 @@ The application separates document loading, text splitting, embedding generation
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/arpana0505/AI_PDF_Chatbot.git
+https://github.com/arpana0505/DocuMind_AI.git
 ```
 
 ### 2. Create a virtual environment
