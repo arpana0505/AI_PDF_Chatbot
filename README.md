@@ -1,4 +1,4 @@
-# Document RAG Assistant
+# DocuMind AI
 
 An AI-powered document answering question answering application built with Retrieval-Augmented Generation (RAG). Users can upload a PDF, ask questions about its contents, and receive responses based on relevant information retrieved directly from the document. 
 
@@ -6,7 +6,7 @@ The application combines semantic search, vector embeddings, conversational memo
 
 ## Live Demo
 
-Try the application: https://pdf-assistant-ai.streamlit.app/
+Try the application: https://documindai.streamlit.app/
 
 ## Key Features
 
@@ -22,7 +22,7 @@ Try the application: https://pdf-assistant-ai.streamlit.app/
 
 ## Architecture
 
-![Document Rag Assistant Architecture](assets/architecture.png)
+![DocuMind AI Architecture](assets/architecture.png)
 
 ## Rag Pipeline
 
@@ -155,8 +155,8 @@ The Streamlit application will open in your browser.
 
 ## Demo
 
-![Document RAG Assistant Demo](assets/app_demo_1.png)
-![Document RAG Assistant Demo](assets/app_demo_2.png)
+![DocuMind AI Demo](assets/app_demo_1.png)
+![DocuMind AI Demo](assets/app_demo_2.png)
 
 ## Future Improvements
 
